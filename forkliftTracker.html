@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creuf RTLS</title>
+  <meta name="description" content="Creuf provides industrial-grade RTLS solutions including employee tracking, forklift tracking, and Atex-certified ex-proof devices for real-time visibility and operational safety.">
+  <meta name="keywords" content="RTLS, UWB, real-time tracking, asset tracking, industrial safety, ex-proof tracker, Atex certified, employee tracking, forklift tracking, indoor positioning">
+  <link rel="canonical" href="https://www.creuf.com/" /> 
+  <link rel="icon" href="assets/favikon.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #16844a;
+      --secondary-color: #ffa600;
+      --text-color: #333;
+      --text-light: #666;
+      --background-color: #f8fafc;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-light: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-medium: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background-color: var(--white);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      box-shadow: var(--shadow-light);
+      z-index: 999;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    nav a.active {
+      color: var(--primary-color);
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary-color);
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .product-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 3rem;
+      border-bottom: 3px solid var(--secondary-color);
+      padding-bottom: 1rem;
+    }
+
+    .product-overview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .product-image {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .product-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-info h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .product-info p {
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-features {
+      margin-bottom: 4rem;
+    }
+
+    .product-features h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .product-features p {
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    
+    .factory-section {
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .factory-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .factory-image {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow-medium);
+    }
+
+    /* Teknik detay */
+    .tech-specs-section {
+      display: flex;
+      justify-content: center;
+      margin: 4rem 0;
+    }
+
+    .tech-specs {
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: var(--shadow-light);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .tech-specs h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-color);
+      padding: 1.5rem;
+      background-color: #f8fafc;
+      margin: 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .specs-table {
+      width: 100%;
+    }
+
+    .spec-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .spec-row:last-child {
+      border-bottom: none;
+    }
+
+    .spec-label {
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+      color: var(--text-color);
+      background-color: #f8fafc;
+      border-right: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+
+    .spec-value {
+      padding: 0.75rem 1.5rem;
+      color: var(--text-light);
+      background-color: var(--white);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .product-overview {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .tech-specs-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .tech-specs-image {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .product-title {
+        font-size: 2rem;
+      }
+
+      main {
+        padding: 2rem 1rem;
+      }
+
+      .spec-row {
+        grid-template-columns: 1fr;
+      }
+
+      .spec-label {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+    }
+
+    /*FOOTER */
+    footer {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      padding: 3rem 2rem 2rem;
+      color: var(--white);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-section h3 {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .footer-section p {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+      color: #ecf0f1;
+    }
+
+    .footer-section a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #4a5568;
+      color: #a0aec0;
+    }
+
+  </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">CREUF</a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="products.html" class="active">UWB Technology</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Genel Başlık -->
+        <h1 class="product-title">Forklift Operator Panel</h1>
+
+        <!-- Ürün Genel Bakış-->
+        <section class="product-overview">
+            <div class="product-image">
+                <img src="assets/forkliftPanelMain.png" alt="Forklift Operator Panel">
+            </div>
+            <div class="product-info">
+                <h2></h2>
+                <p>FOP110 is an all-in-one solution for forklift automation. It combines an UWB tracker with operator touch screen LCD messaging panel, crash detection and RFID operator identification. Operator checks in before driving for authorization and event logging. Forklift is tracked and messages can be sent two ways for a streamlined operation.</p>
+                <p>Crashes, overspeed and zone violations would create an event log on operators id and an optional warning can be seen on device LCD with audible tone. Operator can accept or refuse a message with status feedback. CreufLink software would create a driving score and OEE using the real time log data.</p>
+            </div>
+        </section>
+
+        <!-- Özellikler Bölümü -->
+        <section class="product-features">
+            <h3>UWB RTLS Provides real-time tracking of people, assets, forklifts etc.</h3>
+            <p>Any factory floor or warehouse can be RTLS ready by installing Anchors per 250 m2 area.</p>
+            
+            
+            <div class="factory-section">
+                <img src="assets/factory.png" alt="Factory RTLS Implementation" class="factory-image">
+            </div>
+        </section>
+
+        <!-- Teknik resim de detaylar-->
+        <section class="tech-specs-section">
+            <div class="tech-specs">
+                <h3>Technical Specs.</h3>
+                <div class="specs-table">
+                    <div class="spec-row">
+                        <div class="spec-label">Positioning</div>
+                        <div class="spec-value">Ultra Wide Band (UWB), TDo</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-label">Accuracy</div>
+                        <div class="spec-value">20 cm</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-label">Frequency</div>
+                        <div class="spec-value">3.5 GHz</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-label">Bandwidth</div>
+                        <div class="spec-value">500 MHz</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-label">Bitrate</div>
+                        <div class="spec-value">110 KBits / 850 KBits</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-label">Power</div>
+                        <div class="spec-value">12-24V DC</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-label">LCD</div>
+                        <div class="spec-value">3.5 Inches Color TFT LCD</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-label">RFID</div>
+                        <div class="spec-value">ISO14443A 13.56MHz (MIFARE)</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-label">Material</div>
+                        <div class="spec-value">ABS + PC</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-label">Dimensions (mm)</div>
+                        <div class="spec-value">150 x 130 x 30/div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!--FOOTER-->
+    <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About Creuf</h3>
+            <p>Creuf manufactures leading-edge technologies for life and industry, specializing in real-time location systems that enhance safety, efficiency, and operational visibility.</p>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Information</h3>
+            <p><a href="mailto:info@creuf.com">info@creuf.com</a></p>
+            <p>Bahnhofstraße 61<br>
+               29693 Hodenhagen<br>
+               GERMANY</p>
+          </div>
+        </div>
+    </footer>
+      
+</body>
+</html>

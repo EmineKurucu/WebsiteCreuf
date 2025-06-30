@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creuf RTLS</title>
+  <meta name="description" content="Creuf provides industrial-grade RTLS solutions including employee tracking, forklift tracking, and Atex-certified ex-proof devices for real-time visibility and operational safety.">
+  <meta name="keywords" content="RTLS, UWB, real-time tracking, asset tracking, industrial safety, ex-proof tracker, Atex certified, employee tracking, forklift tracking, indoor positioning">
+  <link rel="canonical" href="https://www.creuf.com/" /> 
+  <link rel="icon" href="assets/favikon.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #16844a;
+      --secondary-color: #ffa600;
+      --text-color: #333;
+      --text-light: #666;
+      --background-color: #f8fafc;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-light: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-medium: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      background-color: var(--white);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      box-shadow: var(--shadow-light);
+      z-index: 999;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    nav a.active {
+      color: var(--primary-color);
+    }
+
+    nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary-color);
+    }
+
+    /* Products Section */
+    .products-section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .products-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .products-title h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .products-title p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-light);
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+    }
+
+    .product-card:hover {
+      box-shadow: var(--shadow-medium);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 1.5rem;
+    }
+
+    .product-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-color);
+      margin-bottom: 0.8rem;
+    }
+
+    .product-description {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .learn-more-btn {
+      background: var(--primary-color);
+      color: var(--white);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 0.9rem;
+    }
+
+    .learn-more-btn:hover {
+      background: #0f6b3a;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .products-section {
+        padding: 2rem 1rem;
+      }
+
+      .products-title h2 {
+        font-size: 2rem;
+      }
+
+      .products-title p {
+        font-size: 1rem;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      nav a {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    /*FOOTER */
+    footer {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      padding: 3rem 2rem 2rem;
+      color: var(--white);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-section h3 {
+      color: var(--secondary-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .footer-section p {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+      color: #ecf0f1;
+    }
+
+    .footer-section a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #4a5568;
+      color: #a0aec0;
+    }
+
+  </style>
+</head>
+<body>
+    <header>
+      <a href="#" class="logo">CREUF</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="products.html" class="active">UWB Technology</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </header>
+
+    <!-- Products Section -->
+    <section class="products-section">
+      <div class="products-title">
+        <h2>Our Products</h2>
+        <p>Discover our comprehensive range of RTLS solutions designed for industrial environments and safety-critical applications.</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Product 1: Employee Tracking System -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/personTracker.png" alt="UWB Person Tracker">
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">UWB Person Tracker</h3>
+            <p class="product-description">Indoor positioning & tracking of workers. Real time location and haptic feedbac.</p>
+            <a href="employeeTracker.html" class="learn-more-btn">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Product 2: Forklift Tracking Solution -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/idCard.png" alt="ID Card Sized UWB Tracker">
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">ID Card Sized UWB Tracker</h3>
+            <p class="product-description">Light and slim UWB person tracker with MIFARE tag. Ideal for office use with 1 month of battery life</p>
+            <a href="idCardUWBTracker.html" class="learn-more-btn">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Product 3: ATEX Certified Ex-Proof Tracker -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/assetTracker.png" alt="UWB Indoor Asset Trackers">
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">UWB Indoor Asset Trackers</h3>
+            <p class="product-description">Indoor RTLS asset tracker for factories and warehouses. Screw and magnet mount options</p>
+            <a href="assetTracker.html" class="learn-more-btn">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Product 4: UWB Positioning System -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="assets/frokliftTerminal.png" alt="Forklift Operator Terminal">
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">Forklift Operator Terminal</h3>
+            <p class="product-description">Ultra-wideband technology platform providing centimeter-level accuracy for indoor positioning and asset tracking applications.</p>
+            <a href="forkliftTracker.html" class="learn-more-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>About Creuf</h3>
+            <p>Creuf manufactures leading-edge technologies for life and industry, specializing in real-time location systems that enhance safety, efficiency, and operational visibility.</p>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Information</h3>
+            <p><a href="mailto:info@creuf.com">info@creuf.com</a></p>
+            <p>Bahnhofstraße 61<br>
+               29693 Hodenhagen<br>
+               GERMANY</p>
+          </div>
+        </div>
+      </footer>
+      
+</body>
+</html>
